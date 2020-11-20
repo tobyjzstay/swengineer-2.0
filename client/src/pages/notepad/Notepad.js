@@ -32,7 +32,7 @@ class Notepad extends Component {
 
   componentDidMount() {
     this.props.handler(true);
-    fetch('/notepad', {
+    fetch('/api/notepad', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -82,7 +82,7 @@ class Notepad extends Component {
       timer: setTimeout(() => {
         if (this.state.characterCount <= this.state.characterLimit) {
           this.props.handler(true);
-          fetch('/notepad', {
+          fetch('/api/notepad', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'

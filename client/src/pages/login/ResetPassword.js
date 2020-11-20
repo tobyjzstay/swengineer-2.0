@@ -37,18 +37,13 @@ class ResetPassword extends Component {
 
     componentDidMount() {
         this.props.handler(true);
-        fetch('/reset/' + this.props.match.params.token, {
+        fetch('/api/reset/' + this.props.match.params.token, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             }
-        }).then(response => {
-            if (response.status === 200) {
-                this.setState({ loading: false });
-            };
-            this.setState({ resetCode: response.status });
-            return response.json();
-        }).then(data => {
+        }).then(response => response.json())
+        .then(data => {
             this.setState({
                 loading: false,
                 resetError: data.resetError
@@ -70,7 +65,7 @@ class ResetPassword extends Component {
 
     onSubmit = (event) => {
         if (event) event.preventDefault();
-        fetch('/reset/' + this.props.match.params.token, {
+        fetch('/api/reset/' + this.props.match.params.token, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

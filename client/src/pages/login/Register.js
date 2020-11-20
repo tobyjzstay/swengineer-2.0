@@ -54,7 +54,7 @@ class Register extends Component {
     onSubmit = (event) => {
         if (event) event.preventDefault();
         this.props.handler(true);
-        fetch('/register', {
+        fetch('/api/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -67,6 +67,7 @@ class Register extends Component {
             } else if (response.status === 500) {
                 this.props.enqueueSnackbar("Internal Server Error", { variant: 'error' });
                 this.props.handler(false);
+                return;
             }
             return response.json();
         }).then(data => {

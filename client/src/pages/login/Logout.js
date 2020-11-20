@@ -4,7 +4,7 @@ import { withSnackbar } from 'notistack';
 class Logout extends Component {
     componentDidMount() {
         this.props.handler(true);
-        fetch('/logout', {
+        fetch('/api/logout', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -15,9 +15,10 @@ class Logout extends Component {
                 this.props.enqueueSnackbar("Successfully logged out", { variant: 'success' });
                 this.props.handler(false);
                 return;
-            };
-            this.props.enqueueSnackbar("Something went wrong", { variant: 'error' });
-            this.props.handler(false);
+            } else {
+                this.props.enqueueSnackbar("Something went wrong", { variant: 'error' });
+                this.props.handler(false);
+            }
         }).catch(() => { // failed to connect
             this.props.enqueueSnackbar("Internal Server Error", { variant: 'error' });
             this.props.handler(false);

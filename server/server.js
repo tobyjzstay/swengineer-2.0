@@ -13,8 +13,8 @@ app.use(cookieParser());
 
 mongoose.connect(config.mongodb.uri, { useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true });
 
-app.use('/', require('./routes/home'));
-app.use('/', require('./routes/login'));
-app.use('/', require('./routes/notepad'));
+app.use('/api', require('./routes/home'));
+app.use('/api', require('./routes/login'));
+app.use('/api', require('./routes/notepad'));
 
 app.listen(process.env.PORT || 8000);

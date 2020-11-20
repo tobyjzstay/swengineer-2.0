@@ -52,7 +52,7 @@ class Login extends Component {
   onSubmit = (event) => {
     if (event) event.preventDefault();
     this.props.handler(true);
-    fetch('/login', {
+    fetch('/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -65,6 +65,7 @@ class Login extends Component {
       } else if (response.status === 500) {
         this.props.enqueueSnackbar("Internal Server Error", { variant: 'error' });
         this.props.handler(false);
+        return;
       }
       return response.json();
     }).then(data => {

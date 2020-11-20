@@ -48,7 +48,7 @@ class Reset extends Component {
     onSubmit = (event) => {
         if (event) event.preventDefault();
         this.props.handler(true);
-        fetch('/reset', {
+        fetch('/api/reset', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
