@@ -16,6 +16,8 @@ import Reset from './pages/login/Reset';
 import Error from './pages/Error';
 import ResetPassword from './pages/login/ResetPassword';
 import Notepad from './pages/notepad/Notepad';
+import GymTracker from './pages/gymtracker/GymTracker';
+import Log from './pages/gymtracker/Log';
 
 import withAuth from './withAuth';
 
@@ -34,6 +36,8 @@ class App extends Component {
     this.handler = this.handler.bind(this)
     this.state = {
       notepad: withAuth(Notepad),
+      gymtracker: withAuth(GymTracker),
+      log: withAuth(Log),
     };
   }
 
@@ -57,6 +61,8 @@ class App extends Component {
               <Route exact path="/reset" render={(props) => <Reset handler={this.handler} {...props} />} />
               <Route exact path="/reset/:token" render={(props) => <ResetPassword handler={this.handler} {...props} />} />
               <Route exact path="/notepad" render={(props) => <this.state.notepad handler={this.handler} {...props} />} />
+              <Route exact path="/gymtracker" render={(props) => <this.state.gymtracker handler={this.handler} {...props} />} />
+              <Route exact path="/gymtracker/log" render={(props) => <this.state.log handler={this.handler} {...props} />} />
               <Route path="/" render={(props) => <Error handler={this.handler} {...props} />} />
             </Switch>
           </BrowserRouter>

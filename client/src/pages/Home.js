@@ -45,7 +45,6 @@ class Home extends Component {
                                                 <CardMedia
                                                     className={classes.media}
                                                     image="https://images.unsplash.com/photo-1483546416237-76fd26bbcdd1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-                                                    title="Contemplative Reptile"
                                                 />
                                                 <CardContent>
                                                     <Typography gutterBottom variant="h5" component="h2">
@@ -53,6 +52,28 @@ class Home extends Component {
                                                     </Typography>
                                                     <Typography variant="body2" color="textSecondary" component="p">
                                                         A simple notepad to take notes. You can write plain text documents without any text formatting.
+                                                    </Typography>
+                                                </CardContent>
+                                            </CardActionArea>
+                                        </Card>
+                                    </Link>
+                                </Grid>
+                            ))}
+                            {[0].map((value) => (
+                                <Grid key={value} item>
+                                    <Link to='/gymtracker' style={{ textDecoration: 'none' }}>
+                                        <Card className={classes.root}>
+                                            <CardActionArea>
+                                                <CardMedia
+                                                    className={classes.media}
+                                                    image="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                                />
+                                                <CardContent>
+                                                    <Typography gutterBottom variant="h5" component="h2">
+                                                        Gym Tracker
+                                                    </Typography>
+                                                    <Typography variant="body2" color="textSecondary" component="p">
+                                                        Track gym workout progress. Provides insight on what muscles to workout.
                                                     </Typography>
                                                 </CardContent>
                                             </CardActionArea>
