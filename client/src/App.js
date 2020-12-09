@@ -18,6 +18,7 @@ import ResetPassword from './pages/login/ResetPassword';
 import Notepad from './pages/notepad/Notepad';
 import GymTracker from './pages/gymtracker/GymTracker';
 import Log from './pages/gymtracker/Log';
+import TwitchClipper from './pages/twitchclipper/TwitchClipper';
 
 import withAuth from './withAuth';
 
@@ -63,6 +64,7 @@ class App extends Component {
               <Route exact path="/notepad" render={(props) => <this.state.notepad handler={this.handler} {...props} />} />
               <Route exact path="/gymtracker" render={(props) => <this.state.gymtracker handler={this.handler} {...props} />} />
               <Route exact path="/gymtracker/log" render={(props) => <this.state.log handler={this.handler} {...props} />} />
+              <Route exact path="/twitchclipper" render={(props) => <TwitchClipper handler={this.handler} {...props} />} />
               <Route path="/" render={(props) => <Error handler={this.handler} {...props} />} />
             </Switch>
           </BrowserRouter>

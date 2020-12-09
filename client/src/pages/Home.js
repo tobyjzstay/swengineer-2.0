@@ -81,6 +81,28 @@ class Home extends Component {
                                     </Link>
                                 </Grid>
                             ))}
+                            {[0].map((value) => (
+                                <Grid key={value} item>
+                                    <Link to='/twitchclipper' style={{ textDecoration: 'none' }}>
+                                        <Card className={classes.root}>
+                                            <CardActionArea>
+                                                <CardMedia
+                                                    className={classes.media}
+                                                    image="https://images.unsplash.com/photo-1527334919515-b8dee906a34b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
+                                                />
+                                                <CardContent>
+                                                    <Typography gutterBottom variant="h5" component="h2">
+                                                        Twitch Clipper
+                                                    </Typography>
+                                                    <Typography variant="body2" color="textSecondary" component="p">
+                                                        Find and download deleted Twitch clips with this tool.
+                                                    </Typography>
+                                                </CardContent>
+                                            </CardActionArea>
+                                        </Card>
+                                    </Link>
+                                </Grid>
+                            ))}
                         </Grid>
                     </Grid>
                 </div>
